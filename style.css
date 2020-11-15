@@ -3,6 +3,11 @@ body {
     background: #ffffff;
 }
 
+img {
+    height: 50;
+    width: 50;
+}
+
 .tab {
     background-color: blue;
     width: 100%; 
@@ -47,5 +52,3 @@ canvas {
     text-align: center;
   }
 
-span {  
-}
