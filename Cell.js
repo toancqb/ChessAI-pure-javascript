@@ -12,7 +12,6 @@ class Cell {
         this.en_passant = false;
         this.castle_k = false;
         this.castle_q = false;
-        this.beingChecked = [];
     }
 
     draw() {

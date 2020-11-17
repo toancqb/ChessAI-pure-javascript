@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">  
+        <script src="load_img.js"></script> 
+        <script src="Define.js"></script>
+    </head>
+    <body>
+        <!-- <div> -->
+            <div class="tab1"> <p id="title">CHESS</p> <p id="winner"></p> </div>
+            <!-- <div> -->
+                <div class="row">
+                    <div class="col-2" id="intro">
+                        <h1 style="text-align: center;color: red;"><strong>Échecs</strong></h1>
+                        <p style="text-align: justify;">Le jeu d’échecs oppose deux joueurs de part et d’autre d’un tablier appelé échiquier composé de soixante-quatre cases claires et sombres nommées les cases blanches et les cases noires. Les joueurs jouent à tour de rôle en déplaçant l'une de leurs seize pièces (ou deux pièces en cas de roque), claires pour le camp des blancs, sombres pour le camp des noirs. Chaque joueur possède au départ un roi, une dame, deux tours, deux fous, deux cavaliers et huit pions. Le but du jeu est d'infliger à son adversaire un échec et mat, une situation dans laquelle le roi d'un joueur est en prise sans qu'il soit possible d'y remédier. </p>
+                    </div>
+                    <div class="col-5">
+                        <canvas id="canvas" width="400" height="400">                
+                            <script src="Pieces.js"></script>
+                            <script src="Cell.js"></script>
+                            <script src="Board.js"></script>
+                            <script src="AI.js"></script>
+                            <script src="Game.js"></script>
+                            <script src="v5.js"></script>
+                        </canvas>
+                    </div>
+                    <div class="col-5">
+                        <button id="btn1" type="button" class="button button1" onclick="player1VSplayer2()">Player 1 vs Player 2</button>
+                    </div>
+                </div>
+            <!-- </div> -->
+        <!-- </div> -->
+            
+        <div class="tab2"> </div>  
+       
+        
+    </body>
+    <div class="footer"><span>Quang Toan TRAN</span></div>
+    
+</html>

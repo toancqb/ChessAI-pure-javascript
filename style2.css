@@ -1,14 +1,10 @@
 
-* {
+body {
+    background: #ffffff;
     box-sizing: border-box;
-  }
-  
-  .header {
-    border: 1px solid red;
-    padding: 15px;
-  }
-  
-  .row::after {
+}
+
+.row::after {
     content: "";
     clear: both;
     display: table;
@@ -19,25 +15,21 @@
     padding: 15px;
     border: 1px solid red;
   }
-  
-  .col-1 {width: 8.33%;}
-  .col-2 {width: 16.66%;}
-  .col-3 {width: 25%;}
-  .col-4 {width: 33.33%;}
-  .col-5 {width: 41.66%;}
-  .col-6 {width: 50%;}
-  .col-7 {width: 58.33%;}
-  .col-8 {width: 66.66%;}
-  .col-9 {width: 75%;}
-  .col-10 {width: 83.33%;}
-  .col-11 {width: 91.66%;}
-  .col-12 {width: 100%;}
 
-  #intro {
+img {
+    height: 50px;
+    width: 50px;
+}
+
+#intro {
     border: 10px solid coral;
     background-color: palegoldenrod;
 }
 
+/* .tab {
+    width: 100%; 
+    height: 600px;
+} */
 
 #title {
     color: red;
@@ -53,10 +45,12 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-img {
-    height: 50px;
-    width: 50px;
-}
+
+/* .tab1, .tab2 {
+    text-align: center;
+    width: 100%;
+    height: 100px;
+} */
 
 #cv {
     display: block;
@@ -73,6 +67,15 @@ canvas {
     background-color: orange;
 }
 
+.footer {
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+  }
 
 .button {
     border: none;
@@ -97,3 +100,16 @@ canvas {
     background-color: #4CAF50;
     color: white;
 }
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}

@@ -131,3 +131,7 @@ function getLstPiece(board, c) {
     }
     return lst;
 }
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}

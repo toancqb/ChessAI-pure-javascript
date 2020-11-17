@@ -6,6 +6,7 @@ class Game {
         
         this.board = new Board(this.context);
         this.cboard = this.board.simulation;
+        this.AI = new AI(this.canvas, this.context);
         this.TURN = 0;  // 0 = White / 1 = Black
         this.MOVE = {   originX: 0,
                         originY: 0,
@@ -44,14 +45,107 @@ class Game {
         }));
         
         this.board.printBoardSimulation();
-        this.board.draw();
+        this.board.draw(true);
     }
 
     update() {
         this.context.clearRect(0,0,400,400);
 
-        this.board.draw();
+        this.board.draw(true);
     }
+/*
+    handlerClickAI(that, e) {
+        var elemLeft = that.canvas.offsetLeft + that.canvas.clientLeft;
+        var elemTop = that.canvas.offsetTop + that.canvas.clientTop;
+        var px = Math.floor((e.pageY - elemTop) / SIZE);
+        var py = Math.floor((e.pageX - elemLeft)/ SIZE);
+
+        if (that.debugMode)
+            console.log(that.board.simulation[px][py], px, py);
+        if (!this.TURN) {
+            if (this.STAGE == 0 && this.preCondSelectedS1(px, py)) {
+                this.processSelectedS1(this.board, px, py);
+            if (this.debugMode)
+                this.board.printBoardSimulation();
+            }
+            else if (this.STAGE == 1 && this.preCondSelectedS2(px, py)) {
+                this.processSelectedS2(px, py);
+                
+                this.MoveAI();
+
+                if (this.debugMode)
+                    this.board.printBoardSimulation();
+            }
+        } 
+    }
+    
+    initAI() {
+        var that = this;
+        this.canvas.addEventListener("click", (function(e) {
+            that.handlerClickAI(that, e);
+        }));
+        
+        this.board.printBoardSimulation();
+        this.board.draw(true);
+    }
+
+    updateAI() {
+        this.context.clearRect(0,0,400,400);
+
+        this.board.draw(true);
+    }
+
+    MoveAI() {
+        this.SelectPieceAI(this, this.board, this.MOVE);
+        if (this.Move()) {
+            this.clearPotentialMove(this.board);
+            this.STAGE = 0;
+            this.TURN = 1 - this.TURN;
+            if (this.debugMode)
+                console.log(this.MOVE);
+        }
+    }
+
+    processSelectedS1AI(x, y) {
+        var that = this;
+        this.moves = [];
+        this.MOVE.originX = x;
+        this.MOVE.originY = y;
+        var piece = this.board.cells[x][y].contain;
+        
+        piece.move(this.board, x, y, this.moves);
+
+        if (piece.key[1] == 'k')
+            this.updatePreMoveCastle(x, y, this.moves);
+
+        this.moves.forEach((function(p) {
+            SelecteS1_BoardSimulation(that.board, p[0], p[1]);
+            SelecteS1_Board(that.board, p[0], p[1], true);
+        }));
+    }
+
+    SelectPieceAI() {
+        var bps = this.board.bpieces;
+        do {
+        do {
+        var piece = bps[getRandomInt(bps.length)];
+        this.MOVE.originX = piece.x;
+        this.MOVE.originY = piece.y;
+
+        this.processSelectedS1AI(piece.x, piece.y);
+        var pos = this.moves[getRandomInt(this.moves.length)];
+        } while (pos == undefined);
+
+        this.MOVE.targetX = pos[0];
+        this.MOVE.targetY = pos[1];
+        
+        } while (this.Move() == false);
+        this.clearPotentialMove(this.board);
+        this.STAGE = 0;
+        this.TURN = 1 - this.TURN;
+        if (this.debugMode)
+            console.log(this.MOVE);
+    }*/
 
     preCondSelectedS1(x, y) {
         var piece = this.board.cells[x][y].contain;

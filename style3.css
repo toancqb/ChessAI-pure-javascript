@@ -1,0 +1,102 @@
+
+body {
+    background-color: #ffffff;
+}
+
+.tab {
+    /* background-color: blue; */
+    width: 100%; 
+    height: 600px;
+}
+#intro {
+    border: 10px solid coral;
+    background-color: palegoldenrod;
+}
+#echec {
+    margin-left: 8%;
+}
+#mouve {
+    margin-bottom: 10px;
+    width: 420px;
+    height: 80px;
+    background: red;
+    position: relative;
+    animation-name: mymove;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+}
+  
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 480px;}
+ }
+#title {
+    margin-top: 30px;
+    color:black;
+    text-align: center;
+    border: solid 2px;
+    font-size: 60px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#winner {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.tab1, .tab2 {
+    text-align: center;
+    width: 100%;
+    height: 100px;
+        /* background-color: green;; */
+}
+
+#canvas {
+    border-style: double;
+    border-width: 20px;
+    border-radius: 5px;
+    background-color: orange;
+}
+
+.footer {
+    left: 0;
+    padding-top: 10px;
+    margin-left: 43%;
+    border: solid 1px;
+    bottom: 0;
+    height: 50px;
+    width: 20%;
+    font-weight: bold;
+    /* background-color: red; */
+    color: black;
+    text-align: center;
+  }
+
+
+  .button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+  
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+  
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
