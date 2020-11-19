@@ -1,13 +1,11 @@
+/*
+ * TO DO LIST:
+ * - Implement AI playing Black pieces (Algo Minimax)
+ * - Implement Openning Book
+ */
 
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
-
-
-
-
-//_______________________________________________________//
-
-//__________________________________________________________//
 
 var game = null;
 

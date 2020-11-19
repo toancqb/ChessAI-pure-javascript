@@ -4,8 +4,12 @@
   }
   
   .header {
-    border: 1px solid red;
+    /*border: 1px solid red;*/
     padding: 15px;
+    text-align: center;
+    background: url("assets/banner2.png") left top no-repeat, url("assets/banner3.png") left top repeat;
+    background-size: 16.66% 100%;
+    /* background-repeat: no-repeat; */
   }
   
   .row::after {
@@ -36,10 +40,12 @@
   #intro {
     border: 10px solid coral;
     background-color: palegoldenrod;
+    text-align: center;
 }
 
 
 #title {
+    
     color: red;
     font-size: 45px;
     font-weight: bold;
@@ -51,6 +57,7 @@
     font-size: 20px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
+    height: 20px;
 }
 
 img {
@@ -61,6 +68,8 @@ img {
 #cv {
     display: block;
     margin: 0 auto;
+    border: 1px red solid;
+    text-align: center;
 }
 
 canvas {
@@ -96,4 +105,81 @@ canvas {
 .button1:hover {
     background-color: #4CAF50;
     color: white;
+}
+
+#btn_group {
+    background-color: #dbcdcc;
+    height: 50px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    border-left: 3px solid #f36d33;
+}
+
+.btncode1 {
+    display: inline-block;
+    color: green;
+    background-color: goldenrod;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btncode1:hover {
+    color: red;
+    background-color: greenyellow;
+}
+
+/*pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 0.1em 0.1em; 
+    display: block;
+    word-wrap: break-word;
+}
+*/
+
+pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font: normal normal 14px/16px "Courier New",Courier,Monospace;
+    line-height: 1.0;
+    margin-top: 0;
+    max-width: 100%;
+    padding: .5em 1em;
+    display: block;
+    word-wrap: break-word;
+
+    overflow: auto;
+    /* overflow-x: auto; */
+    white-space: pre-wrap;
+    counter-reset: line;
+}
+
+pre .line-number {
+    float: left;
+    margin: 0 1em 0 -1em;
+    border-right: 1px solid;
+    text-align: right;
+}
+
+pre .line-number span {
+    display: block;
+    padding: 0 .5em 0 1em;
+}
+
+pre .cl {
+    display: block;
+    clear: both;
 }

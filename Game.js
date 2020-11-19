@@ -249,6 +249,20 @@ class Game {
         }
     }
 
+    pawnBeQueen(x, y) {
+        var piece = this.board.cells[x][y].contain;
+        var key = this.board.simulation[x][y][0] + 'q';
+        var px = (this.TURN == 0) ? 0 : 7;
+        if ((this.TURN == 0 && x == px) || (this.TURN == 1 && x == px)) {
+            removePieceFromLists(piece, this.board);
+
+            var newPiece = new Queen(this.context, key, x, y);
+            this.board.cells[x][y].contain = newPiece;
+            this.board.simulation[x][y] = key;
+            addPieceToLists(newPiece, this.board);
+        }
+    }
+
     updateGlobal(x, y) {
         var lstPawn = getLstPiece(this.board, 'p');
         var that = this;
@@ -258,8 +272,10 @@ class Game {
             if (that.board.EN_PASSANT[1-that.TURN][p[1]] > 0)
                 that.board.EN_PASSANT[1-that.TURN][p[1]]--;
         }));
-        if (this.board.cells[x][y].contain.key[1] == 'p')
+        if (this.board.cells[x][y].contain.key[1] == 'p') {
             this.updateCondPawnEnPassant();
+            this.pawnBeQueen(x, y);
+        }
         if (this.board.cells[x][y].contain.key[1] == 'r' || this.board.cells[x][y].contain.key[1] == 'k')
             this.updateCondCastle(x, y);
     }
@@ -322,7 +338,9 @@ class Game {
             this.updateGlobal(x, y);
 
             if (this.isChecked(PLAYER_TYPE[1-this.TURN]) && this.isCheckMate(PLAYER_TYPE[1-this.TURN])) {
-                alert("Congratualation!\n"+PLAYER[this.TURN] + " WIN!");
+                var w = document.getElementById("winner");
+                w.innerHTML = "PLAYER [" + PLAYER[this.TURN] + "] WIN!";
+                // alert("Congratualation!\n"+PLAYER[this.TURN] + " WIN!");
             }
 
             return true;

@@ -2,8 +2,27 @@
 <html>
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> 
+    <script>
+        (function () {
+  codeView()
+}
+)()
+        function codeView () {
+    var pre = document.getElementsByTagName('pre')
+    for (var i = 0; i < pre.length; i++) {
+      pre[i].innerHTML = '<span class="line-number"></span>' + pre[i].innerHTML + '<span class="cl"></span>'
+      var num = pre[i].innerHTML.split(/\n/).length
+      for (var j = 0; j < num; j++) {
+        var lineNum = pre[i].getElementsByTagName('span')[0]
+        lineNum.innerHTML += '<span>' + (j + 1) + '</span>'
+      }
+    }
+}
+
+    </script>
+    
 </head>
 <body>
 
@@ -15,8 +34,15 @@
 <div class="row">
 
 <div class="col-2" id="intro">
-    <h1 style="text-align: center;color: red;"><strong>Échecs</strong></h1>
-    <p style="text-align: justify;">Le jeu d’échecs oppose deux joueurs de part et d’autre d’un tablier appelé échiquier composé de soixante-quatre cases claires et sombres nommées les cases blanches et les cases noires. Les joueurs jouent à tour de rôle en déplaçant l'une de leurs seize pièces (ou deux pièces en cas de roque), claires pour le camp des blancs, sombres pour le camp des noirs. Chaque joueur possède au départ un roi, une dame, deux tours, deux fous, deux cavaliers et huit pions. Le but du jeu est d'infliger à son adversaire un échec et mat, une situation dans laquelle le roi d'un joueur est en prise sans qu'il soit possible d'y remédier. </p>
+    <h1 style="color: red;"><strong>Project Description</strong></h1>
+    <p style="text-align: left;">
+        * This is my personal project in <b>programming Pure Javascript!</b> 
+        <br> * I also want to practice <b>Object Orient Programming</b> (ECMAScript 2015, also known as ES6, introduced JavaScript Classes.)
+        <br> * For the most `Browser compatibility`: I only use <b>Class, constructor, extends</b>
+        <br> * Chess rules: Castle Move, En Passant Move, Pawn promote (Queen by default)
+        <br> * Programming and Chess are my favorite hobbies :) 
+    </p>
+   
 </div>
 
 <div class="col-5" id="cv">
@@ -32,7 +58,52 @@
     </canvas>
   </div>
 <div class="col-5">
-    <button id="btn1" type="button" class="button button1" onclick="player1VSplayer2()">Player 1 vs Player 2</button>
+    <script src="code_menu.js"></script>
+    <!-- <button id="btn1" type="button" class="button button1" onclick="player1VSplayer2()">Player 1 vs Player 2</button> -->
+    <!-- <br> -->
+    <div id="btn_group">
+    <!-- <button class="btncode1" type="button" onclick="displayCode_v5()">CanvasLoop</button> -->
+    <button class="btncode1" type="button" onclick="displayCode_Define()">Define</button>
+    <button class="btncode1" type="button" onclick="displayCode_Game()">Game</button>
+    <button class="btncode1" type="button" onclick="displayCode_Cell()">Cell</button>
+    <button class="btncode1" type="button" onclick="displayCode_Board()">Board</button>
+    <button class="btncode1" type="button" onclick="displayCode_Piece()">Piece</button>
+    <button class="btncode1" type="button" onclick="displayCode_King()">King</button>
+    <button class="btncode1" type="button" onclick="displayCode_Queen()">Queen</button>
+    <button class="btncode1" type="button" onclick="displayCode_Pawn()">Pawn</button>
+
+    </div>
+    <pre><code><p id="code_content">
+        --[Click the buttons to see Class Code]--
+
+/*
+ * TO DO LIST:
+ * - Implement AI playing Black pieces (Algo Minimax)
+ * - Implement Openning Book
+ */
+
+var canvas = document.getElementById("canvas");
+var context = canvas.getContext("2d");
+
+var game = null;
+
+function init() {
+    game = new Game();
+
+    game.init();
+
+    window.requestAnimationFrame(update);
+}
+
+function update() {
+    
+    game.update();
+    
+    window.requestAnimationFrame(update);
+}
+
+resources.onReady(init);
+    </p></code></pre>
 </div>
 
 </div>
